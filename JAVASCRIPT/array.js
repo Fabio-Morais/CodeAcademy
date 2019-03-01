@@ -1,6 +1,14 @@
 
 MAIS INFO-> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 
+/*
+
+ unshift -> array <- push
+   shift   <- array -> pop
+   
+*/
+
+
 const chores = ['wash dishes', 'do laundry', 'take out trash'];
 
 chores.push('lol','sec'); //insere no fim
