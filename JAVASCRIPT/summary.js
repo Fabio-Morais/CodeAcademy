@@ -105,10 +105,22 @@ acceptEverything(veggies)
 
 /**********************************************************************/
 /**********************************************************************/
+/*	squareNums	*/
 
 
+const numbers = [2, 7, 9, 171, 52, 33, 14]
 
+const toSquare = num => num * num
 
+// Write your code here:
+const squareNums = (array) =>{
+  let newArray= array.map(num =>{
+    return num*num;
+  })
+  return newArray
+};
+
+console.log(squareNums(numbers))
 
 
 
@@ -118,7 +130,25 @@ acceptEverything(veggies)
 /**********************************************************************/
 /**********************************************************************/
 
+/*	shoutGreetings	*/
 
+// Write your code here:
+
+const shoutGreetings = (array) =>{
+  let newArray=[];
+  newArray= array.map( str =>{
+    str=str.toUpperCase();
+    return `${str}!`
+  })
+  return newArray
+}
+
+// Feel free to uncomment out the code below to test your function!
+
+const greetings = ['hello', 'hi', 'heya', 'oi', 'hey', 'yo'];
+
+console.log(shoutGreetings(greetings))
+// Should print [ 'HELLO!', 'HI!', 'HEYA!', 'OI!', 'HEY!', 'YO!' ]
 
 
 
@@ -128,4 +158,55 @@ acceptEverything(veggies)
 
 /**********************************************************************/
 /**********************************************************************/
+/*sortYears*/
+const sortYears = (numbers) =>{
+  numbers.sort(function(a, b) {
+  return b - a; // se a-b, entao é crescente
+});
+  return numbers
+}
+
+const years = [1970, 1999, 1951, 1982, 1963, 2011, 2018, 1922]
+
+console.log(sortYears(years))
+
+
+/**********************************************************************/
+/**********************************************************************/
+/*	justCoolStuff	*/
+
+// Write your code here:
+
+const justCoolStuff = (str1, str2) =>{
+  let newArray=[];
+  newArray= str1.filter(item => str2.includes(item))
+	return newArray;
+  }
+/*
+.includes retorna true se houver o elemento
+.filter retorna sempre quando é true, nao retorna quando é false
+*/
+const coolStuff = ['gameboys', 'skateboards', 'backwards hats', 'fruit-by-the-foot', 'pogs', 'my room', 'temporary tattoos'];
+
+const myStuff = [ 'rules', 'fruit-by-the-foot', 'wedgies', 'sweaters', 'skateboards', 'family-night', 'my room', 'braces', 'the information superhighway']; 
+
+console.log(justCoolStuff(myStuff, coolStuff))
+// Should print [ 'fruit-by-the-foot', 'skateboards', 'my room' ]
+
+
+
+/**********************************************************************/
+/**********************************************************************/
+/*	isTheDinnerVegan	*/
+
+
+const isTheDinnerVegan = (object) =>{
+  return object.every(item => item.source == 'plant')
+}
+
+const dinner = [{name: 'hamburger', source: 'plant'}, {name: 'cheese', source: 'dairy'}, {name: 'ketchup', source:'plant'}, {name: 'bun', source: 'plant'}, {name: 'dessert twinkies', source:'unknown'}];
+
+console.log(isTheDinnerVegan(dinner))
+// Should print false
+
 
