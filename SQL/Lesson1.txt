@@ -1,0 +1,71 @@
+SELECT movie
+FROM movie;
+
+SELECT movie AS 'nome que queremos'
+FROM movie;
+
+SELECT DISTINCT genre //coloca apenas os unicos
+FROM movies;
+
+SELECT *
+FROM movies
+WHERE imdb_rating > 8; // condiçao
+/*
+= equal to
+!= not equal to
+> greater than
+< less than
+>= greater than or equal to
+<= less than or equal to
+*/
+
+
+SELECT * 
+FROM movies
+WHERE name LIKE 'Se_en';	//like->is a special operator used with the WHERE clause to search for a specific pattern in a column.
+//The _ means you can substitute any individual character here without breaking the pattern.
+
+
+SELECT * 
+FROM movies
+WHERE name LIKE 'A%'; 
+/*
+A% matches all movies with names that begin with letter ‘A’
+%a matches all movies that end with ‘a’
+*/
+
+
+SELECT *
+FROM movies
+WHERE name BETWEEN 'D' AND 'G';
+/*retorna nomes começados por 'D' OU 'E' OU 'F'*/
+
+SELECT *
+FROM movies
+WHERE year BETWEEN 1970 AND 1979;
+/*de 1970 a 1979 inclusive*/
+
+
+SELECT name, year
+FROM movies
+ORDER BY name DESC; // OU ASC -> ascendente
+
+SELECT *
+FROM movies
+ORDER BY imdb_rating DESC
+LIMIT 3;
+/*Retorna o topo 3 de rating */
+
+
+SELECT name,
+ CASE
+  WHEN genre = 'romance' THEN 'Chill'
+  WHEN genre = 'comedy'  THEN 'Chill'
+  ELSE 'Intense'
+ END AS 'Mood'
+FROM movies;
+/*
+Each WHEN tests a condition and the following THEN gives us the string if the condition is true.
+The ELSE gives us the string if all the above conditions are false.
+The CASE statement must end with END.
+*/
