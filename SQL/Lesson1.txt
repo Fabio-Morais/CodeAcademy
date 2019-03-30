@@ -4,7 +4,7 @@ FROM movie;
 SELECT movie AS 'nome que queremos'
 FROM movie;
 
-SELECT DISTINCT genre //coloca apenas os unicos
+SELECT DISTINCT genre /*coloca apenas os unicos*/
 FROM movies;
 
 SELECT *
