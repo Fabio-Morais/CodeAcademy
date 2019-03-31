@@ -1,0 +1,57 @@
+/*
+COUNT(): count the number of rows
+SUM(): the sum of the values in a column
+MAX()/MIN(): the largest/smallest value
+AVG(): the average of the values in a column
+ROUND(): round the values in the column
+*/
+
+SELECT COUNT(*)/*conta os duplicados tambem*/
+FROM table_name;
+
+/**********************/
+
+SELECT COUNT (DISTINCT category)/*diferentes valores*/
+FROM fake_apps;
+
+/**********************/
+
+SELECT SUM(downloads)
+FROM fake_apps;
+
+/**********************/
+
+SELECT MAX (price) /*Ou MIN*/
+FROM fake_apps;
+
+/**********************/
+
+SELECT AVG(downloads)
+FROM fake_apps;
+
+/**********************/
+
+SELECT ROUND(price, 0) /*0 CASAS DECIMAIS*/
+FROM fake_apps;
+
+/**********************/
+/*preço e a som de cada tipo de preço, para downloads maiores que 20,000*/
+SELECT price, COUNT(*)
+FROM fake_apps
+WHERE downloads >20000
+GROUP BY price;
+
+/**********************/
+
+/*
+When we want to limit the results of a query based on values of the individual rows, use WHERE.
+When we want to limit the results of a query based on an aggregate property, use HAVING.
+*/
+
+SELECT price,
+	ROUND(AVG(downloads)),
+  COUNT (*)
+FROM fake_apps
+GROUP BY price
+HAVING COUNT (*)>10;
+/*Seleciona apenas os que tem mais de 10*/

@@ -1,0 +1,48 @@
+
+
+/*
+CREATE TABLE creates a new table.
+INSERT INTO adds a new row to a table.
+SELECT queries data from a table.
+ALTER TABLE changes an existing table.
+UPDATE edits a row in a table.
+DELETE FROM deletes rows from a table.
+*/
+
+
+CREATE TABLE celebs (
+   id INTEGER, 
+   name TEXT, 
+   age INTEGER
+);
+
+
+INSERT INTO celebs (id, name, age) 
+VALUES (1, 'Justin Bieber', 22);
+
+
+ALTER TABLE celebs 
+ADD COLUMN twitter_handle TEXT; 
+SELECT * FROM celebs; 
+
+/*atualiza valores*/
+UPDATE celebs 
+SET twitter_handle = '@taylorswift13' 
+WHERE id = 4; 
+
+/*elimina valores que tem NULL na coluna twitterhandle*/
+DELETE FROM celebs 
+WHERE twitter_handle IS NULL;
+
+/*elimina so 5*/
+DELETE FROM table
+WHERE condition
+LIMIT 5;
+
+
+/*	Constraints	*/
+CREATE TABLE awards (
+   id INTEGER PRIMARY KEY,
+   recipient TEXT NOT NULL,
+   award_name TEXT DEFAULT 'Grammy' //valor default
+);
