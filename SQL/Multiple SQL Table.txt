@@ -21,3 +21,77 @@ JOIN subscriptions
   /*THER ORDER DOESN'T MATTER*/
   
   /**************************2***************************************/
+  
+  /*Juntar mesmo que tenha valores diferentes*/
+  
+  SELECT *
+FROM table1
+LEFT JOIN table2
+  ON table1.c2 = table2.c2;
+  
+  https://s3.amazonaws.com/codecademy-content/courses/learn-sql/multiple-tables/left-join.gif
+  
+ /****************************3*************************************/
+
+  SELECT *
+FROM classes
+JOIN students
+  ON classes.id = students.class_id;
+  /*The students table contains information on all students 
+  in the school. Its primary key is id. It contains the foreign key class_id, 
+  which corresponds to the primary key of classes.*/
+  /****************************4*************************************/
+CROSS JOIN /*junta tudo*/
+
+
+ /****************************5*************************************/
+
+  /*Suppose we have two tables and they have the same columns.*/
+
+table1:
+
+pokemon	type
+Bulbasaur	Grass
+Charmander	Fire
+Squirtle	Water
+
+table2:
+
+pokemon	type
+Snorlax	Normal
+
+/*If we combine these two with UNION:*/
+
+SELECT *
+FROM table1
+UNION
+SELECT *
+FROM table2;
+
+The result would be:
+pokemon	type
+Bulbasaur	Grass
+Charmander	Fire
+Squirtle	Water
+Snorlax	Normal
+/*
+SQL has strict rules for appending data:
+
+Tables must have the same number of columns.
+The columns must have the same data types in the same order as the first table.*/
+
+ /****************************6*************************************/
+
+ WITH previous_results AS (
+   SELECT ...
+   ...
+   ...
+   ...
+)
+SELECT *
+FROM previous_results
+JOIN customers
+  ON _____ = _____;
+  /*The WITH statement allows us to perform a separate query (such as aggregating customer’s subscriptions)
+previous_results is the alias that we will use to reference any columns from the query inside of the WITH clause
+We can then go on to do whatever we want with this temporary table (such as join the temporary table with another table)*/
