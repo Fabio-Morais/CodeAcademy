@@ -1,0 +1,23 @@
+  /**************************1***************************************/
+SELECT *
+FROM orders
+/*JUNTAR CUSTOMERS FROM ORDERS*/
+JOIN customers
+  ON orders.customer_id = customers.customer_id;
+/*We want to match orders table’s customer_id column with customers table’s customer_id column.*/
+
+/*exemplo*/
+
+SELECT *
+FROM orders 
+JOIN subscriptions
+	ON orders.subscription_id = subscriptions.subscription_id
+  WHERE  subscriptions.description = 'Fashion Magazine';
+  /*junta as 2 colunas na coluna "subscription_id"*/
+  
+  /*APENAS JUNTA QUANDO SE TEM VALORES IGUAIS, OS VALORES DIFERENTES NAO SAO JUNTADOS*/
+  https://s3.amazonaws.com/codecademy-content/courses/learn-sql/multiple-tables/inner-join.gif
+  
+  /*THER ORDER DOESN'T MATTER*/
+  
+  /**************************2***************************************/
