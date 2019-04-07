@@ -90,13 +90,27 @@ let _={
       newArray.push(array[j]); 
   return newArray;
   },
-    dropWhile2(array, fun){
+  dropWhile2(array, fun){
     const cb = (element, index) => {
       return !fun(element, index, array)
     };
       let dropNumber = array.findIndex(cb);
       let droppedArray = this.drop(array, dropNumber);
       return droppedArray;
+  },
+  chunk(array, size){
+    let NewArray=[];
+        console.log(array)
+    console.log(size)
+
+    if(size === undefined)
+      size=1;
+    for(let i=0; i<array.length; i+=size)
+    {
+      NewArray.push(array.slice(i, i+size));
+    }
+    console.log(NewArray)
+    return NewArray;
   }
   
 }
