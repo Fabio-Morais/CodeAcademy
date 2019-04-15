@@ -1,0 +1,37 @@
+.innerHTML
+//The innerHTML property sets or returns the HTML content (inner HTML) of an element.
+
+document.body.innerHTML = 'The cat loves the dog.';
+
+----------------------------------------
+
+.querySelector()
+//The .querySelector() method allows us to specify a CSS selector and then returns the first element that matches that selector. 
+
+document.querySelector('p'); // vai procurar pelo seletor 'p'
+
+----------------------------------------
+
+.getElementByID()
+
+
+document.getElementById('bio').innerHTML = 'The description';
+
+----------------------------------------
+
+.style
+//The .style property of a DOM element provides access to the inline style of that HTML tag.
+
+let blueElement = document.querySelector('.blue');
+blueElement.style.backgroundColor = 'blue';
+
+----------------------------------------
+.createElement('p'); //create a element empty
+
+let paragraph = document.createElement('p');
+paragraph.innerHTML = 'The text inside paragraph';
+document.body.appendChild(paragraph);
+
+//Add another element into html 
+
+----------------------------------------

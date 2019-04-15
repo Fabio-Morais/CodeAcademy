@@ -1,0 +1,4 @@
+https://s3.amazonaws.com/codecademy-content/courses/dom/dom_revision_6.svg
+
+document.body to access the body element
+document.title to access the title element
