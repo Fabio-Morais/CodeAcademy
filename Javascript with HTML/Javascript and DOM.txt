@@ -29,9 +29,52 @@ blueElement.style.backgroundColor = 'blue';
 .createElement('p'); //create a element empty
 
 let paragraph = document.createElement('p');
+paragraph.id = "description";
 paragraph.innerHTML = 'The text inside paragraph';
 document.body.appendChild(paragraph);
 
 //Add another element into html 
 
 ----------------------------------------
+
+.removeChild()
+document.getElementById('sign').hidden = true;
+
+let paragraph = document.querySelector('p');
+document.body.removeChild(paragraph);
+
+----------------------------------------
+
+const parent = document.querySelector("#more-destinations");
+
+const child = document.querySelector("#oaxaca");
+
+parent.removeChild(child);
+/*
+Select the element with the ID oaxaca and save it to a variable.
+Select its parent, assigned an ID of more-destinations.
+Remove the element using the .removeChild() method and passing in the variable containing the oaxaca element.
+*/
+
+----------------------------------------
+
+let element = document.querySelector("button");
+
+function turnButtonRed (){
+	element.style.backgroundColor = "red";
+  element.style.color = "white";
+  element.innerHTML = "Red Button"; 
+}
+
+element.onclick = turnButtonRed;
+
+
+
+/*
+The document keyword grants access to the root of the DOM in JavaScript
+The DOM Interface allows you to select a specific element with CSS selectors by using the .querySelector() method
+You can also access an element directly by its ID with .getElementById()
+The .innerHTML and .style properties allow you to modify an element by changing its contents or style respectively
+You can create, append, and remove elements by using the .createElement(),.appendChild() and .removeChild() methods respectively
+The .onclick property can add interactivity to a DOM element based on a click event
+*/
