@@ -1,0 +1,40 @@
+
+------------------------------------
+readMore.onclick = function() {
+  moreInfo.style.display = 'block';
+}/*se carregar aparece uma janela a mostrar o resto do html*/
+  
+ ------------------------------------
+ 
+	view.addEventListener('click', textChange);
+
+ ------------------------------------
+	door.removeEventListener('click', openDoor)
+------------------------------------
+/*
+the .target property to access the element that triggered the event.
+the .type property to access the name of the event.
+the .timeStamp property to access the number of milliseconds that passed since the document loaded and the event was triggered.
+*/
+
+------------------------------------
+https://www.w3schools.com/jsref/dom_obj_style.asp
+https://developer.mozilla.org/en-US/docs/Web/Events
+https://developer.mozilla.org/en-US/docs/Web/Events#Mouse_Events
+------------------------------------
+
+mysteryButton.onwheel = colorChange
+/*Ao rodar a roda do rato ele ativa*/
+------------------------------------
+
+
+document .onkeydown= up
+document .onkeyup= down
+------------------------------------
+/*
+JavaScript engines register events as objects with properties and methods associated with them.
+Event handlers are registered as properties of their event object.
+Event object properties like .target, .type, and .timeStamp are used to provide information about the event.
+The .addEventListener() method can be used to add multiple event handler functions to a single event.
+The .removeEventListener() method stops specific event handlers from “listening” for specific events firing.
+*/
