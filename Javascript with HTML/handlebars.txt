@@ -1,0 +1,24 @@
+const source = document.getElementById('greet').innerHTML
+
+const template = Handlebars.compile(source)
+
+const context= {
+  greeting: 'a'
+}
+
+const compiledHtml=template(context)
+const fill = document.getElementById('hello')
+fill.innerHTML = compiledHtml;
+
+
+      {{#if opinion}}
+        <p>"The correct way to say GIF is GIF!"</p>
+        {{else}}
+        <p>"There's no right way to say GIF!"</p>
+      {{/if}}
+	  
+	  	{{#each newArray}}
+      	<div class="block">
+        	{{this}}
+        </div>
+      {{/each}}
